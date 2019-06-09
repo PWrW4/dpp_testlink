@@ -91,7 +91,7 @@ if __name__ == '__main__':
         pprint(result.jsonify())
 
         TESTLINK_API_PYTHON_SERVER_URL = "http://localhost/lib/api/xmlrpc/v1/xmlrpc.php"
-        TESTLINK_API_PYTHON_DEVKEY = "451bd4a4546fe606d97ce82402c1409c"
+        TESTLINK_API_PYTHON_DEVKEY = "dd104081ee68cf833e3a483e4540780b"
 
         # tls = testlink.TestLinkHelper( TESTLINK_API_PYTHON_SERVER_URL, TESTLINK_API_PYTHON_DEVKEY).connect(testlink.TestlinkAPIClient)
 
@@ -99,13 +99,13 @@ if __name__ == '__main__':
         tls = testlink.TestlinkAPIClient(tlh._server_url, tlh._devkey, verbose=True)
         print(tls.countProjects())
 
-        tc_info = tls.getTestCase(None, testcaseexternalid='dpp-1')
+        tc_info = tls.getTestCase(None, testcaseexternalid='test-1')
         print(tc_info)
         tc_info = tls.getProjectTestPlans('1')
         print(tc_info)
         # tls.reportTCResult(4, 2, 'SampleBuild', 'f', 'some notes', user='user', platformid='1')
         tls.reportTCResult(None, 2, None, 'p', 'some notes', guess=True,
-                           testcaseexternalid='dpp-1',
+                           testcaseexternalid='test-1',
                            platformname='NewPlatform',
                            execduration=3.9, timestamp='2015-09-22 16:00',
                            steps=[{'step_number': 1, 'result': 'p', 'notes': 'result note for passed step 1'}])
